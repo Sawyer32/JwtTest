@@ -1,17 +1,11 @@
-import { Alert } from "react-bootstrap";
+import Layout from "./Layout";
 
 function Home() {
-  if (sessionStorage.getItem("user-token") !== null) {
-    return (
-      <>
-        <div>
-          <h1>Home</h1>
-        </div>
-      </>
-    );
-  } else {
-    return <Alert variant="danger">Please login first</Alert>;
-  }
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  );
 }
 
 export default Home;

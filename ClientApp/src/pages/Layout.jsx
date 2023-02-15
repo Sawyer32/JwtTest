@@ -1,21 +1,14 @@
-import { Outlet } from "react-router-dom";
-import Navigation from "../components/Navigation";
-import { ListGroup } from "react-bootstrap";
+import { Link, Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <>
-      <main>
-        <div className="row vh-100">
-          <div className="col-3">
-            <Navigation />
-          </div>
-          <div className="col-8">
-            <Outlet />
-          </div>
-        </div>
-      </main>
-    </>
+    <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+      </nav>
+      <Outlet />
+    </div>
   );
 };
 

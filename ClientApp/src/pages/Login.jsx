@@ -32,7 +32,7 @@ function Login() {
             return;
           }
           sessionStorage.clear();
-          sessionStorage.setItem("user-token", token);
+          sessionStorage.setItem("token", token);
           setTimeout(() => {
             navigate("/");
           }, 500);

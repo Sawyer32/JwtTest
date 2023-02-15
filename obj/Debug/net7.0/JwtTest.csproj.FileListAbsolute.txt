@@ -80,3 +80,5 @@ C:\Users\hunesjoje\Desktop\netcore\JwtTest\obj\Debug\net7.0\refint\JwtTest.dll
 C:\Users\hunesjoje\Desktop\netcore\JwtTest\obj\Debug\net7.0\JwtTest.pdb
 C:\Users\hunesjoje\Desktop\netcore\JwtTest\obj\Debug\net7.0\JwtTest.genruntimeconfig.cache
 C:\Users\hunesjoje\Desktop\netcore\JwtTest\obj\Debug\net7.0\ref\JwtTest.dll
+C:\Users\hunesjoje\Desktop\netcore\JwtTest\bin\Debug\net7.0\ClientApp\package-lock.json
+C:\Users\hunesjoje\Desktop\netcore\JwtTest\bin\Debug\net7.0\ClientApp\package.json
