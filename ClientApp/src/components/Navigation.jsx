@@ -1,34 +1,40 @@
-import { Link } from "react-router-dom";
-import Nav from "react-bootstrap/Nav";
-import { Boxes } from "react-bootstrap-icons";
+import { Container, Row, Col, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import jwt_decode from "jwt-decode";
 
 function Navigation() {
+  const token = sessionStorage.getItem("token");
+  const decoded = jwt_decode(token);
+  const userName = decoded.name;
+
+  function logout() {
+    sessionStorage.clear();
+    window.location.reload();
+  }
+
   return (
-    <>
-      <div className="shadow-sm sidebar">
-        <div className="  border">
-          <Link
-            to={`/`}
-            className="text-decoration-none text-black fw-semibold"
-          >
-            <span className="fs-3 text-decoration-none">Site title</span>
-          </Link>
-        </div>
-        <div>
-          <Nav defaultActiveKey="/" className="flex-column">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link>
-              <Link to={`contact`}>
-                <Boxes color="gray" size={28} className="mx-2" />
-              </Link>
-            </Nav.Link>
-            <Nav.Link href="/projects">Projects</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
+    <Navbar bg="light" className="shadow-sm" expand="lg">
+      <Container>
+        <Navbar.Brand>JWTTEST</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            {token ? (
+              <NavDropdown title={userName} id="basic-nav-dropdown">
+                <Nav.Link href="/login" onClick={logout}>
+                  Logout
+                </Nav.Link>
+              </NavDropdown>
+            ) : (
+              <NavDropdown title="Username" id="basic-nav-dropdown">
+                <Nav.Link href="/login" onClick={logout}>
+                  Logout
+                </Nav.Link>
+              </NavDropdown>
+            )}
           </Nav>
-        </div>
-      </div>
-    </>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
-
 export default Navigation;

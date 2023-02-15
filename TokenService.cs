@@ -34,9 +34,10 @@ public class TokenService
             {
                 new Claim(JwtRegisteredClaimNames.Sub, "TokenForTheApiWithAuth"),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim("userId", user.Id),
+                //new Claim(ClaimTypes.Name, user.UserName),
+                new Claim("name", user.UserName),
+                new Claim("email", user.Email)
             };
             return claims;
         }

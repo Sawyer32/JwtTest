@@ -3,13 +3,16 @@ import jwt_decode from "jwt-decode";
 
 export default function PrivateRoutes() {
   let auth = { token: sessionStorage.getItem("token") };
-
-  let decodedToken = jwt_decode(auth.token);
-  let currentDate = new Date();
-
-  if (decodedToken.exp * 1000 < currentDate.getTime()) {
+  if (auth.token === null) {
     return <Navigate to="/login" />;
   } else {
-    return <Outlet />;
+    let decodedToken = jwt_decode(auth.token);
+    let currentDate = new Date();
+
+    if (decodedToken.exp * 1000 < currentDate.getTime()) {
+      return <Navigate to="/login" />;
+    } else {
+      return <Outlet />;
+    }
   }
 }

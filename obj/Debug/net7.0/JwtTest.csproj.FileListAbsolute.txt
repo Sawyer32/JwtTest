@@ -1,4 +1,3 @@
-C:\Users\hunesjoje\Desktop\netcore\JwtTest\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\hunesjoje\Desktop\netcore\JwtTest\bin\Debug\net7.0\appsettings.json
 C:\Users\hunesjoje\Desktop\netcore\JwtTest\bin\Debug\net7.0\JwtTest.exe
 C:\Users\hunesjoje\Desktop\netcore\JwtTest\bin\Debug\net7.0\JwtTest.deps.json
